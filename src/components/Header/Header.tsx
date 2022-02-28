@@ -19,7 +19,7 @@ const Header = () => {
     `h-7 md:inline-flex cursor-pointer px-2 ${customStyles}`;
   return (
     <div className='border-b border-b-stone-300 w-full'>
-      <div className='mx-4 md:m-auto flex justify-between  h-16 items-center max-w-5xl '>
+      <div className='mx-4 md:m-auto flex justify-between  h-16 items-center max-w-[975px] '>
         <div className='relative w-24 h-12 ml-2'>
           <Link href='/'>
             <Image
@@ -48,7 +48,7 @@ const Header = () => {
           )}
         </div>
 
-        <div className='flex'>
+        <div className='flex w-[240px]'>
           <NavBtn type='solid' icon='Home' href='/' />
           <NavBtn type='outline' icon='PaperAirplane' customClass='rotate-45' />
           <NavBtn type='outline' icon='PlusCircle' />
