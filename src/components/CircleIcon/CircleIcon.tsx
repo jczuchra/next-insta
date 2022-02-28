@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import { CircleIconProps } from './types';
 
-const CircleIcon = ({ src, customClass, isHighlight }: CircleIconProps) => {
+const CircleIcon = ({
+  src,
+  customClass = '',
+  isHighlight = false,
+}: CircleIconProps) => {
   return (
     <div className={`relative w-6 mx-2 cursor-pointer ${customClass}`}>
       <Image
