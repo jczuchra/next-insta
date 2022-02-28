@@ -54,12 +54,7 @@ const Header = () => {
           <NavBtn type='outline' icon='PlusCircle' />
           <NavBtn type='outline' icon='SearchCircle' href='/explore' />
           <NavBtn type='outline' icon='Heart' />
-          <CircleIcon />
-          {/* <HomeIcon
-            className={navBtnStyles()}
-            onClick={() => console.log('Grr')}
-          /> */}
-          {/* <PaperAirplaneIcon className={navBtnStyles('rotate-45')} /> */}
+          <CircleIcon src='/img/test.png' />
         </div>
       </div>
     </div>

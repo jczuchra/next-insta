@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { NavBtnProps } from './types';
 
 const NavBtn = ({ type, icon, customClass, href }: NavBtnProps) => {
   const Icon: any = dynamic(
@@ -18,11 +19,3 @@ const NavBtn = ({ type, icon, customClass, href }: NavBtnProps) => {
 };
 
 export default NavBtn;
-
-type NavBtnProps = {
-  type: string;
-  icon: string;
-  customClass?: string;
-  href?: string;
-  onClick?: Function;
-};
