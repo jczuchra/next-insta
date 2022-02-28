@@ -4,3 +4,8 @@
 /* Your own custom component styles */
 
 @import 'tailwindcss/utilities';
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}

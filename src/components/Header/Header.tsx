@@ -10,6 +10,7 @@ import {
   SearchIcon,
 } from '@heroicons/react/outline';
 import CircleIcon from '@components/CircleIcon';
+import SearchModal from './SearchModal';
 import NavBtn from './NavBtn';
 
 const Header = () => {
@@ -30,15 +31,15 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div className='hidden md:flex bg-gray-100 p-1.5 rounded-lg items-center'>
+        <div className='hidden md:flex bg-[#efefef] p-1.5 rounded-lg items-center ml-32 w-[268px]'>
           {showIcon && <SearchIcon className='h-5 w-8 text-gray-500 px-2' />}
           <input
-            className='bg-gray-100 focus-visible:outline-none pl-2'
+            className='bg-[#efefef] focus-visible:outline-none pl-2 w-64'
             placeholder='Search'
             value={searchTxt}
             onBlur={() => setShowIcon(true)}
             onFocus={() => setShowIcon(false)}
-            onChange={(e) => setSearchTxt(e?.target?.value)}
+            onChange={(e) => setSearchTxt(e.target.value)}
           />
           {!showIcon && (
             <XCircleIcon
@@ -56,6 +57,7 @@ const Header = () => {
           <NavBtn type='outline' icon='Heart' />
           <CircleIcon src='/img/test.png' />
         </div>
+        {!showIcon && <SearchModal />}
       </div>
     </div>
   );

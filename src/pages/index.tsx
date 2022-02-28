@@ -10,6 +10,7 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <Header />
+        <div className='h-[1000px] w-100 bg-[#fafafa]' />
       </div>
     </>
     // <Feed />
