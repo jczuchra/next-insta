@@ -5,13 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "extract-messages": "set NODE_ENV=development&& extract-messages -l=en,pl,es -o src/lang -d en --flat src/**/!(*.test)*Messages.ts"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "extract-react-intl-messages": "^4.1.1",
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-intl": "^5.24.6"
   },
   "devDependencies": {
     "@types/node": "^17.0.0",

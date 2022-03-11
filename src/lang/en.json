@@ -1,0 +1,11 @@
+{
+  "header.clearAll": "Clear all",
+  "header.latest": "Latest",
+  "header.search": "Search",
+  "post.addComment": "Add a comment...",
+  "post.hoursAgo": "{count} hours ago",
+  "post.likes": "{count} likes",
+  "post.more": "more",
+  "post.post": "Post",
+  "post.viewAllComments": "View all {count} comments"
+}

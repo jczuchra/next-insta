@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@components/*": ["./components/*"]
+      "@components/*": ["./components/*"],
+      "@styles": ["./styles/globalStyles.ts"],
+      "@utils": ["./utils"],
     },
     "target": "es5",
     "lib": [
@@ -30,5 +32,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+, "src/lang/index.js", "src/components/Header/useMessages.js"  ]
 }
