@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [localMessages, setLocalMessages] = useState('');
   const [locale, setLocale] = useState('en');
-  const langsSupported = ['en'];
   const appState = {
     dispatch,
     state,

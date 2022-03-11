@@ -6,8 +6,7 @@ export function getTextWidth(text, classes) {
   const div = document.getElementById('ruler');
   div.className = div.classList.value + ' ' + classes;
   div.innerHTML = text;
-  const metrics = div.clientWidth;
-  return metrics;
+  return div.clientWidth;
 }
 
 export { AppContext, initialState, reducer, UPDATE_VALUE };

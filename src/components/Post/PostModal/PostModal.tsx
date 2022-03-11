@@ -1,6 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import ModalWrapper from '@components/ModalWrapper';
-import { useEffect } from 'react';
 import { AppContext, UPDATE_VALUE } from '@utils';
 import PostHeader from '../shared/PostHeader';
 import CommentSection from '../shared/CommentSection';

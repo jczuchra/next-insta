@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useContext } from 'react';
 import Head from 'next/head';
 import Header from '@components/Header';
 import Feed from '@components/Feed';

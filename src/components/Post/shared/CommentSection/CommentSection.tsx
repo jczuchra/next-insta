@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   BookmarkIcon,
   ChatIcon,
@@ -9,7 +9,6 @@ import {
 import { boldSmallText } from '@styles';
 import { getTextWidth } from '@utils';
 import useMessages from '../../useMessages';
-import { useEffect } from 'react';
 
 const CommentSection = () => {
   const [isLong, setIsLong] = useState(false);
