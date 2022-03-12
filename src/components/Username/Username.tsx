@@ -1,7 +1,7 @@
 import { UsernameProps } from './types';
 import { boldSmallText } from '@styles';
 
-const Username = ({ username, bioname }: UsernameProps) => {
+const Username = ({ username = 'username', bioname }: UsernameProps) => {
   return (
     <div className='pl-2'>
       <div className={boldSmallText}>username</div>
