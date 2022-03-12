@@ -1,4 +1,4 @@
 export interface UsernameProps {
-  username?: string;
+  username: string;
   bioname?: string;
 }
