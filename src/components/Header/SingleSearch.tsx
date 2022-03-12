@@ -13,7 +13,7 @@ const SingleSearch = () => {
           }
           size={8}
         />
-        <Username />
+        <Username username='username' />
       </div>
       <XIcon className='w-6 text-[#8e8e8e] cursor-pointer' />
     </div>
