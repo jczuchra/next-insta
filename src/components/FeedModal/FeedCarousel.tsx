@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CarouselItem from './CarouselItem';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/outline';
 
-const Carousel = ({}) => {
+const FeedCarousel = () => {
   const [active, setActive] = useState(0);
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -58,4 +58,4 @@ const Carousel = ({}) => {
   );
 };
 
-export default Carousel;
+export default FeedCarousel;
