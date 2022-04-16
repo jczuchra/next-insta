@@ -6,10 +6,12 @@ const CircleIcon = ({
   size = 6,
   customClass = '',
   isHighlight = false,
+  onClick = () => {},
 }: CircleIconProps) => {
   return (
     <div
-      className={`relative min-h-[2.5rem] min-w-[2.5rem] w-${size} h-${size} mx-2 cursor-pointer ${customClass}`}>
+      onClick={() => onClick()}
+      className={`relative circle${size} mx-2 cursor-pointer ${customClass}`}>
       <Image
         className={`rounded-full border-1 ${
           isHighlight && '!border-solid !border-orange-500'
