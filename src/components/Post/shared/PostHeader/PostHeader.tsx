@@ -1,6 +1,6 @@
 import CircleIcon from '@components/CircleIcon';
 import { DotsHorizontalIcon } from '@heroicons/react/outline';
-import { boldSmallText } from '@styles';
+import { boldSmallText, normalXSmallText, black1 } from '@styles';
 
 const PostHeader = () => {
   return (
@@ -9,12 +9,10 @@ const PostHeader = () => {
         <CircleIcon size={8} src='https://placekitten.com/50/50' />
         <div className='pl-2'>
           <div className={boldSmallText}>username</div>
-          <div className='font-normal text-xs text-[#8e8e8e]'>
-            Warszawka, Polandia
-          </div>
+          <div className={normalXSmallText}>Warszawka, Polandia</div>
         </div>
       </div>
-      <DotsHorizontalIcon className='w-5 cursor-pointer fill[#262626]' />
+      <DotsHorizontalIcon className={`w-5 cursor-pointer fill[${black1}]`} />
     </div>
   );
 };

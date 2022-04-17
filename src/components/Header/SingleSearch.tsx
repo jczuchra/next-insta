@@ -11,7 +11,7 @@ const SingleSearch = () => {
             'http://placekitten.com/100/100?image=' +
             Math.floor(Math.random() * 15)
           }
-          size={8}
+          size={10}
         />
         <Username username='username' />
       </div>

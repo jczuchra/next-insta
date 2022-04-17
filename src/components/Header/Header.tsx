@@ -71,7 +71,7 @@ const Header = () => {
             <NavBtn icon='Heart' />
           </div>
           <div>
-            <CircleIcon src='/img/test.png' size={7} />
+            <CircleIcon src='/img/test.png' size={6} />
           </div>
         </div>
       </div>
