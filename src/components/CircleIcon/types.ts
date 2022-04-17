@@ -3,5 +3,5 @@ export interface CircleIconProps {
   size?: number;
   customClass?: string;
   isHighlight?: boolean;
-  onClick?: Function;
+  onClick?: () => void;
 }

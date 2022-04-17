@@ -1,5 +1,5 @@
 export interface CarouselItemProps {
   id: number;
   level: number;
-  setActive: Function;
+  setActive: (active: number) => void;
 }
