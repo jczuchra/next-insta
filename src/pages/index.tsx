@@ -5,8 +5,9 @@ import Feed from '@components/Feed';
 import Propositions from '@components/Propositions';
 import PostModal from '@components/Post/PostModal';
 import Post from '@components/Post';
-import { AppContext } from '@utils';
+import { AppContext } from '@context/AppContext';
 import FeedModal from '@components/FeedModal';
+import { ProtectedRoute } from '@components/Routes';
 
 export default function Home() {
   const context = useContext(AppContext);
@@ -14,7 +15,7 @@ export default function Home() {
     state: { showPostModal, showFeedModal },
   } = context;
   return (
-    <>
+    <ProtectedRoute>
       <div className=''>
         <Head>
           <title>nextinsta</title>
@@ -22,7 +23,7 @@ export default function Home() {
         </Head>
         <Header />
         <div className='h-full w-full bg-[#fafafa] pt-[65px]'>
-          <div className='pt-[30px] md:w-[750px] lg:w-[975px] mx-auto flex pb-7'>
+          <div className='pt-[16px] md:w-[750px] lg:w-[975px] mx-auto flex pb-7'>
             <div className='mx-auto'>
               <Feed />
               <div>
@@ -37,6 +38,6 @@ export default function Home() {
         </div>
       </div>
       <div className='t-0 absolute invisible -z-20' id='ruler' />
-    </>
+    </ProtectedRoute>
   );
 }

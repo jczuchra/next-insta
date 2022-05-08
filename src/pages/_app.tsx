@@ -1,19 +1,14 @@
-import { useEffect, useState, useReducer } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { IntlProvider } from 'react-intl';
-import { AppContext, initialState, reducer } from '@utils';
+import { AppContextProvider } from '@context/AppContext';
 import lang from '../lang';
 import '../styles/index.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [state, dispatch] = useReducer(reducer, initialState);
   const [localMessages, setLocalMessages] = useState('');
   const [locale, setLocale] = useState('en');
-  const appState = {
-    dispatch,
-    state,
-  };
   useEffect(() => {
     const { languages } = navigator;
     setLocale(languages[0]);
@@ -22,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <AppContext.Provider value={appState}>
+      <AppContextProvider>
         <IntlProvider
           messages={localMessages as any}
           locale={locale}
@@ -36,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Head>
           <Component {...pageProps} />
         </IntlProvider>
-      </AppContext.Provider>
+      </AppContextProvider>
     </>
   );
 }

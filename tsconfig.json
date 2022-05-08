@@ -3,7 +3,9 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["./components/*"],
+      "@context/*": ["./context/*"],
       "@styles": ["./styles/globalStyles.ts"],
+      "@svg/*": ["./svg/*"],
       "@utils": ["./utils"],
     },
     "target": "es5",
@@ -31,6 +33,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/lang/index.js", "src/components/Header/useMessages.js"  ]
+    "**/*.tsx", 
+    "src/lang/index.js", ]
 }
