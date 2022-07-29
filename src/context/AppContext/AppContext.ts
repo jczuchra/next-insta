@@ -2,7 +2,7 @@ import { createContext } from 'react';
 import { initialState } from './initialState';
 
 const AppContext = createContext({
-  dispatch: () => {
+  dispatch: (action: any) => {
     // init context
   },
   state: initialState,

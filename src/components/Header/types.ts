@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface NavBtnProps {
   icon: string;
   customClass?: string;
@@ -6,5 +8,5 @@ export interface NavBtnProps {
 }
 
 export interface ProfileModalProps {
-  setIsProfileModal: () => void;
+  setIsProfileModal: Dispatch<SetStateAction<boolean>>;
 }
