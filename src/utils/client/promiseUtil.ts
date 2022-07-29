@@ -5,7 +5,7 @@ const promiseUtil = {
       document.location = resp.url;
       return;
     }
-    return await resp.json();
+    return resp.json();
   },
   post: async (url: string, body: object) => {
     const resp = await fetch(url, {
@@ -19,7 +19,7 @@ const promiseUtil = {
       document.location = resp.url;
       return;
     }
-    return await resp.json();
+    return resp.json();
   },
 };
 
