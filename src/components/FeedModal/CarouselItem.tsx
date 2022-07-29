@@ -40,7 +40,7 @@ const FeedComment = () => {
     <div className='absolute h-10 z-10 -bottom-1 flex scale-[0.4] w-[500px] translate-x-[-32%] justify-center items-center'>
       <input
         placeholder='Reply to Pan kitku-1'
-        className='border rounded-full text-white text-sm font-extralight p-3 w-[70%] bg-transparent focus-visible:outline-none placeholder:text-white '
+        className='border rounded-full text-white text-sm font-extralight p-3 w-[70%] bg-transparent placeholder:text-white '
       />
 
       <PaperAirplaneIcon className='w-6 h-6 cursor-pointer rotate-[65deg] ml-3 -mt-1.5 text-white' />

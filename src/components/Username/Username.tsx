@@ -1,11 +1,21 @@
 import { UsernameProps } from './types';
 import { boldSmallText } from '@styles';
+import { useRouter } from 'next/router';
 
-const Username = ({ username = 'username', bioname }: UsernameProps) => {
+const Username = ({
+  username = 'username',
+  bioname = 'bioname',
+  bioClassName = '',
+}: UsernameProps) => {
+  const router = useRouter();
   return (
-    <div className='pl-2'>
-      <div className={boldSmallText}>username</div>
-      <div className='font-normal text-sm text-[#8e8e8e]'>bioname</div>
+    <div
+      className='pl-2 cursor-pointer'
+      onClick={() => router.push(`/${username}`)}>
+      <div className={boldSmallText}>{username}</div>
+      <div className={`font-normal text-sm text-gray1 ${bioClassName}`}>
+        {bioname}
+      </div>
     </div>
   );
 };

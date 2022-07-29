@@ -1,11 +1,6 @@
 import CircleIcon from '@components/CircleIcon';
 import { HeartIcon } from '@heroicons/react/outline';
-import {
-  boldSmallText,
-  normalSmallText,
-  normalXSmallText,
-  black1,
-} from '@styles';
+import { boldSmallText, normalSmallText, normalXSmallText } from '@styles';
 
 const SingleComment = () => {
   return (
@@ -18,7 +13,7 @@ const SingleComment = () => {
           <div className='flex'>
             <div className='leading-[18px]'>
               <span className={boldSmallText}>username</span>
-              <span className={`${normalSmallText} ml-2 text-[${black1}]`}>
+              <span className={`${normalSmallText} ml-2 text-black1`}>
                 I’m up to eight minutes of four seconds in and eight seconds
                 out. Thank you brother
               </span>

@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dockerBuild": "docker build -t nextinsta-frontend .",
+    "dockerStart": "docker run -p 3000:3000 nextinsta-frontend",
+    "docker": "npm run dockerBuild && npm run dockerStart",
     "build": "next build",
     "start": "next start",
     "extract-messages": "set NODE_ENV=development&& extract-messages -l=en,pl,es -o src/lang -d en --flat src/**/!(*.test)*Messages.ts"
@@ -11,11 +14,16 @@
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "@tailwindcss/line-clamp": "^0.3.1",
+    "cloudinary": "^1.30.0",
+    "cookie": "^0.5.0",
     "extract-react-intl-messages": "^4.1.1",
-    "next": "12.0.7",
+    "next": "^12.1.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
     "react-intl": "^5.24.6",
+    "sharp": "^0.30.4",
+    "swr": "^1.3.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {

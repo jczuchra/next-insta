@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
 import Loader from '@components/Loader';
+import { RouteProps } from './types';
 import isAuthenticated from './isAuthenticated';
 import React, { useEffect, useState } from 'react';
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = ({ children }: RouteProps) => {
   const [isRendered, setIsRendered] = useState(false);
   const router = useRouter();
   useEffect(() => {

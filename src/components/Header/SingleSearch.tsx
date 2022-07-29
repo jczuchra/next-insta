@@ -15,7 +15,7 @@ const SingleSearch = () => {
         />
         <Username username='username' />
       </div>
-      <XIcon className='w-6 text-[#8e8e8e] cursor-pointer' />
+      <XIcon className='w-6 text-gray1 cursor-pointer' />
     </div>
   );
 };

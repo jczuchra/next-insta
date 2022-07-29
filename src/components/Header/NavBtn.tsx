@@ -3,21 +3,29 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { NavBtnProps } from './types';
 
-const NavBtn = ({ icon, customClass, href }: NavBtnProps) => {
+const NavBtn = ({
+  icon,
+  customClass,
+  href,
+  onClick = () => {},
+}: NavBtnProps) => {
   const router = useRouter();
   const isCurrent = router.pathname === href;
   const Icon: any = dynamic(
-    () =>
-      import(`@heroicons/react/${isCurrent ? 'solid' : 'outline'}/${icon}Icon`)
+    () => import(`../../svg/${icon}${isCurrent ? 'Solid' : 'Outline'}`)
   );
   return href ? (
     <Link href={href}>
-      <Icon
-        className={`h-7 md:inline-flex cursor-pointer px-3 ${customClass}`}
-      />
+      <div className={`md:inline-flex cursor-pointer px-3 ${customClass}`}>
+        <Icon />
+      </div>
     </Link>
   ) : (
-    <Icon className={`h-7 md:inline-flex cursor-pointer px-2 ${customClass}`} />
+    <div
+      className={`md:inline-flex cursor-pointer px-2 ${customClass}`}
+      onClick={onClick}>
+      <Icon />
+    </div>
   );
 };
 

@@ -9,6 +9,9 @@ export async function middleware(req: NextRequest, ev: NextFetchEvent) {
   const publicRoutes = ['login', 'register'];
   const route = req.nextUrl.pathname.split('/');
   if (!cookies.accessToken && !publicRoutes.includes(route[route.length - 1])) {
+    if (!cookies.refreshToken) {
+      return NextResponse.redirect(`${req.nextUrl.origin}/auth/logout`);
+    }
     const refreshData = JSON.parse(cookies.refreshToken);
 
     const resp = await promiseUtil.post(refreshTokenUrl(), {

@@ -1,4 +1,4 @@
 import AuthRoute from './AuthRoute';
-import ProtectedRoute from './PortectedRoute';
+import ProtectedRoute from './ProtectedRoute';
 
 export { ProtectedRoute, AuthRoute };

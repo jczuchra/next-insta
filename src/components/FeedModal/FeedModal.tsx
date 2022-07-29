@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import Image from 'next/image';
 import ModalWrapper from '@components/ModalWrapper';
 import { XIcon } from '@heroicons/react/outline';
-import { AppContext, UPDATE_VALUE } from '@utils';
+import { AppContext, UPDATE_VALUE } from '@context/AppContext';
 import Carousel from './FeedCarousel';
 
 const FeedModal = () => {
