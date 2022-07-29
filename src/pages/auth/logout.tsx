@@ -4,12 +4,12 @@ import { useEffect } from 'react';
 export default function Logout() {
   const router = useRouter();
 
-  const logout = (router) => {
+  const logout = () => {
     localStorage.setItem('user', JSON.stringify({}));
     router.push('/auth/login');
   };
   useEffect(() => {
-    logout(router);
+    logout();
   }, []);
   return <div></div>;
 }

@@ -8,12 +8,12 @@ import { PostProps } from './types';
 const Post = ({
   img = 'https://placekitten.com/600/600',
   author = { username: '' },
-  description,
+  _description,
   place,
   liked,
   saved,
   likes,
-  date,
+  _date,
 }: PostProps) => {
   const { dispatch } = useContext(AppContext);
   return (

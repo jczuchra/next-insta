@@ -2,10 +2,10 @@ const promiseUtil = {
   get: async (url: string) => {
     const resp = await fetch(url);
     if (resp.redirected) {
-      return (document.location = resp.url);
+      document.location = resp.url;
+      return;
     }
-    const json = await resp.json();
-    return json;
+    return await resp.json();
   },
   post: async (url: string, body: object) => {
     const resp = await fetch(url, {
@@ -16,10 +16,10 @@ const promiseUtil = {
       body: JSON.stringify(body),
     });
     if (resp.redirected) {
-      return (document.location = resp.url);
+      document.location = resp.url;
+      return;
     }
-    const json = await resp.json();
-    return json;
+    return await resp.json();
   },
 };
 

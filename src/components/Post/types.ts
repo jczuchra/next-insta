@@ -6,10 +6,10 @@ interface User {
 export interface PostProps {
   img: string;
   author: User;
-  description: string;
+  _description: string;
   place?: string;
   liked: boolean;
   saved: boolean;
   likes: number;
-  date: Date;
+  _date: Date;
 }

@@ -7,8 +7,7 @@ const promiseUtil = {
         Authorization: 'Bearer ' + cookies?.accessToken,
       },
     });
-    const json = await resp.json();
-    return json;
+    return await resp.json();
   },
   post: async (url: string, body: object, cookies?: Cookies) => {
     const resp = await fetch(url, {
@@ -20,8 +19,7 @@ const promiseUtil = {
       },
       body: JSON.stringify(body),
     });
-    const json = await resp.json();
-    return json;
+    return await resp.json();
   },
 };
 

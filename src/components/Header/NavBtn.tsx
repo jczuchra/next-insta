@@ -7,7 +7,9 @@ const NavBtn = ({
   icon,
   customClass,
   href,
-  onClick = () => {},
+  onClick = () => {
+    // This is intentional
+  },
 }: NavBtnProps) => {
   const router = useRouter();
   const isCurrent = router.pathname === href;

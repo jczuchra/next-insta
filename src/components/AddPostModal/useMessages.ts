@@ -1,8 +1,8 @@
 import { useIntl, defineMessages } from 'react-intl';
 
-const useMessages = (id, variables = {}) => {
+const useMessages = () => {
   const { formatMessage } = useIntl();
-  return formatMessage(messages[id], variables);
+  return (id) => formatMessage(messages[id]);
 };
 
 const messages = defineMessages({

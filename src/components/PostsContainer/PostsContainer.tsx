@@ -11,7 +11,7 @@ const PostsContainer = () => {
   } = useContext(AppContext);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    promiseUtil.get(getPostsUrl()).then((posts) => setPosts(posts.data));
+    promiseUtil.get(getPostsUrl()).then((allPosts) => setPosts(allPosts.data));
   }, []);
   return (
     <div>
@@ -19,12 +19,12 @@ const PostsContainer = () => {
         <Post
           img={post.img}
           author={post.author}
-          description={post.description}
+          _description={post.description}
           liked={post.liked}
           saved={post.saved}
           place={post.place}
           likes={post.likes}
-          date={post.date}
+          _date={post.date}
         />
       ))}
       {showPostModal && <PostModal />}

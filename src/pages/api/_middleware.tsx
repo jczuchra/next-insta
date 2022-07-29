@@ -1,9 +1,9 @@
-import type { NextFetchEvent, NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { refreshTokenUrl } from 'utils/client/apiUrl';
 import promiseUtil from 'utils/client/promiseUtil';
 
-export async function middleware(req: NextRequest, ev: NextFetchEvent) {
+export async function middleware(req: NextRequest) {
   let response = NextResponse.next();
   const cookies = req.cookies;
   const publicRoutes = ['login', 'register'];
