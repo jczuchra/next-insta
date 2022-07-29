@@ -7,7 +7,7 @@ import TextInput from '@components/TextInput';
 import promiseUtil from 'utils/client/promiseUtil';
 import { registerUrl } from 'utils/client/apiUrl';
 import { AuthRoute } from '@components/Routes';
-import useMessages from './useMessages';
+import useMessages from '@components/Auth/useMessages';
 
 export default function Register() {
   const [email, setEmail] = useState('');

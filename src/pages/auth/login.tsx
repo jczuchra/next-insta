@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import TextInput from '@components/TextInput';
-import useMessages from './useMessages';
+import useMessages from '@components/Auth/useMessages';
 import promiseUtil from 'utils/client/promiseUtil';
 import { loginUrl } from 'utils/client/apiUrl';
 import { AuthRoute } from '@components/Routes';
