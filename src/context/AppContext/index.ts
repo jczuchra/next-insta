@@ -3,7 +3,7 @@ import AppContext from './AppContext';
 import { initialState } from './initialState';
 import { reducer, UPDATE_VALUE } from './reducer';
 
-const AppContextProvider = ({ children }) => {
+const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return React.createElement(
     AppContext.Provider,

@@ -10,23 +10,30 @@ const PostsContainer = () => {
     state: { showPostModal },
   } = useContext(AppContext);
   const [posts, setPosts] = useState([]);
+  const [error, setError] = useState();
+
   useEffect(() => {
-    promiseUtil.get(getPostsUrl()).then((allPosts) => setPosts(allPosts.data));
+    promiseUtil
+      .get(getPostsUrl())
+      .then((allPosts) => setPosts(allPosts.data))
+      .catch((err) => setError(err));
   }, []);
+
   return (
     <div>
-      {posts.map((post) => (
-        <Post
-          img={post.img}
-          author={post.author}
-          _description={post.description}
-          liked={post.liked}
-          saved={post.saved}
-          place={post.place}
-          likes={post.likes}
-          _date={post.date}
-        />
-      ))}
+      {!error &&
+        posts.map((post) => (
+          <Post
+            img={post.img}
+            author={post.author}
+            _description={post.description}
+            liked={post.liked}
+            saved={post.saved}
+            place={post.place}
+            likes={post.likes}
+            _date={post.date}
+          />
+        ))}
       {showPostModal && <PostModal />}
     </div>
   );

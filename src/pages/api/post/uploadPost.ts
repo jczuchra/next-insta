@@ -6,15 +6,10 @@ const cloudinary = require('cloudinary');
 initCloudinary();
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log('Cloudinary', cloudinary);
   if (req.method === 'POST') {
-    cloudinary.v2.uploader.upload(
-      JSON.parse(req.body.data),
-      { folder: '/nextinsta/szczuri4' },
-      function (error, result) {
-        console.log(result, error);
-      }
-    );
+    cloudinary.v2.uploader.upload(JSON.parse(req.body.data), {
+      folder: '/nextinsta/szczuri4',
+    });
 
     return res.json({});
   }

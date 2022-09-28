@@ -9,13 +9,15 @@ import { ImagesTabProps } from './types';
 const ImagesContainer = () => {
   const { dispatch } = useContext(AppContext);
   const [images, setImages] = useState([]);
+  const [error, setError] = useState();
 
   const router = useRouter();
 
   useEffect(() => {
     promiseUtil
       .get(`/api/post/getProfilePosts?username=${router.query.name}`)
-      .then((resp) => setImages(resp.data));
+      .then((resp) => setImages(resp.data))
+      .catch((err) => setError(err));
   }, []);
 
   return (
@@ -27,21 +29,22 @@ const ImagesContainer = () => {
         <ImagesTab Img={TaggedOutline} txt={'TAGGED'} />
       </div>
       <div className='grid grid-cols-3 gap-[2px] md:gap-4 lg:gap-6 w-full'>
-        {images.map((img) => (
-          <Image
-            onClick={() =>
-              dispatch({
-                type: UPDATE_VALUE,
-                payload: { showPostModal: true, imgSrc: img.id },
-              })
-            }
-            className='cursor-pointer'
-            src={img.href}
-            layout='intrinsic'
-            width={293}
-            height={293}
-          />
-        ))}
+        {!error &&
+          images.map((img) => (
+            <Image
+              onClick={() =>
+                dispatch({
+                  type: UPDATE_VALUE,
+                  payload: { showPostModal: true, imgSrc: img.id },
+                })
+              }
+              className='cursor-pointer'
+              src={img.href}
+              layout='intrinsic'
+              width={293}
+              height={293}
+            />
+          ))}
       </div>
     </div>
   );

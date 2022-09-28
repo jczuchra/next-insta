@@ -41,7 +41,7 @@ const messages = defineMessages({
   termsInfo: {
     id: 'register.termsInfo',
     defaultMessage:
-      'By signing up, you agree to our Terms . Learn how we collect, use and share your data in our Data Policy and how we use cookies and similar technology in our Cookies Policy .',
+      'By signing up, you agree to our Terms. Learn how we collect, use and share your data in our Data Policy and how we use cookies and similar technology in our Cookies Policy .',
   },
   dontHaveAccount: {
     id: 'login.dontHaveAccount',

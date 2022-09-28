@@ -5,8 +5,9 @@ import { uploadPostUrl } from 'utils/client/apiUrl';
 import promiseUtil from 'utils/client/promiseUtil';
 import Loader from '@components/Loader';
 import useMessages from './useMessages';
+import { AddPostModalProps } from './types';
 
-const AddPostModal = ({ setIsAddPostModal }) => {
+const AddPostModal = ({ setIsAddPostModal }: AddPostModalProps) => {
   useHideModal('addPostModal', setIsAddPostModal, true);
   const [file, setFile] = useState('');
   const [filePath, setFilePath] = useState({});
@@ -26,10 +27,14 @@ const AddPostModal = ({ setIsAddPostModal }) => {
 
   const handleUpload = async () => {
     setIsLoading(true);
-    await promiseUtil.post(uploadPostUrl(), {
-      data: JSON.stringify(filePath),
-    });
-    setIsAddPostModal(false);
+    try {
+      await promiseUtil.post(uploadPostUrl(), {
+        data: JSON.stringify(filePath),
+      });
+      setIsAddPostModal(false);
+    } catch (err) {
+      console.error('Upload error', err);
+    }
   };
 
   return (
