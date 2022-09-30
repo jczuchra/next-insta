@@ -1,18 +1,23 @@
 import CircleIcon from '@components/CircleIcon';
 import { DotsHorizontalIcon } from '@heroicons/react/outline';
-import { boldSmallText, normalXSmallText, black1 } from '@styles';
+import { boldSmallText, normalXSmallText } from '@styles';
+import { PostHeaderProps } from './types';
 
-const PostHeader = () => {
+const PostHeader = ({
+  username,
+  bio,
+  avatar = 'https://placekitten.com/50/50',
+}: PostHeaderProps) => {
   return (
     <div className='flex py-3.5 pl-2 pr-3 justify-between'>
       <div className='flex items-center'>
-        <CircleIcon size={8} src='https://placekitten.com/50/50' />
+        <CircleIcon size={8} src={avatar} />
         <div className='pl-2'>
-          <div className={boldSmallText}>username</div>
-          <div className={normalXSmallText}>Warszawka, Polandia</div>
+          <div className={boldSmallText}>{username}</div>
+          <div className={normalXSmallText}>{bio}</div>
         </div>
       </div>
-      <DotsHorizontalIcon className={`w-5 cursor-pointer fill[${black1}]`} />
+      <DotsHorizontalIcon className={`w-5 cursor-pointer fill-black1`} />
     </div>
   );
 };

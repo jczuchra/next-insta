@@ -1,29 +1,44 @@
 import { useContext } from 'react';
 import Image from 'next/image';
-import { AppContext, UPDATE_VALUE } from '@utils';
+import { AppContext, UPDATE_VALUE } from '@context/AppContext';
 import CommentSection from './shared/CommentSection';
 import PostHeader from './shared/PostHeader';
+import { PostProps } from './types';
 
-const Post = () => {
+const Post = ({
+  img = 'https://placekitten.com/600/600',
+  author = { username: '' },
+  _description,
+  place,
+  liked,
+  saved,
+  likes,
+  _date,
+}: PostProps) => {
   const { dispatch } = useContext(AppContext);
   return (
-    <div className='max-w-[480px] md:max-w-[615px] h-auto mt-6 border border-[#dbdbdb] rounded-[3px] bg-white'>
-      <PostHeader />
-      <div className='relative h-[615px] w-full'>
+    <div className='max-w-[480px] md:max-w-[615px] h-auto mt-6 border border-gray2 rounded-[3px] bg-white'>
+      <PostHeader
+        username={author.username}
+        avatar={author.avatar}
+        bio={place}
+      />
+      <div
+        className='relative h-[780px] w-full'
+        onClick={() =>
+          dispatch({
+            type: UPDATE_VALUE,
+            payload: { showPostModal: true },
+          })
+        }>
         <Image
           className='cursor-pointer'
-          onClick={() =>
-            dispatch({
-              type: UPDATE_VALUE,
-              payload: { showPostModal: true },
-            })
-          }
           layout='fill'
           objectFit='contain'
-          src='https://placekitten.com/600/600'
+          src={img}
         />
       </div>
-      <CommentSection />
+      <CommentSection liked={liked} saved={saved} likes={likes} />
     </div>
   );
 };

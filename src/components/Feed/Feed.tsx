@@ -1,11 +1,15 @@
 import { useEffect, useState, useContext } from 'react';
 import CircleIcon from '@components/CircleIcon';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/outline';
-import { normalXSmallText, black1 } from '@styles';
-import { AppContext, UPDATE_VALUE } from '@utils';
+import { normalXSmallText } from '@styles';
+import { AppContext, UPDATE_VALUE } from '@context/AppContext';
+import FeedModal from '@components/FeedModal';
 
 const Feed = () => {
-  const { dispatch } = useContext(AppContext);
+  const {
+    dispatch,
+    state: { showFeedModal },
+  } = useContext(AppContext);
   const [currentFeeds, setCurrentFeeds] = useState([]);
   const [pointer, setPointer] = useState(8);
   const mock = [];
@@ -18,8 +22,8 @@ const Feed = () => {
             Math.floor(Math.random() * 15)
           }
           isHighlight
-          size={16}
-          customClass='transition'
+          size={14}
+          customClass='mx-[12px]'
           onClick={() =>
             dispatch({
               type: UPDATE_VALUE,
@@ -54,7 +58,7 @@ const Feed = () => {
   return (
     <div
       id='feed'
-      className='w-[480px] h-[110px] md:w-[615px] bg-white border-[#dbdbdb] py-4 border rounded-[3px] mr-7 flex items-center overflow-hidden relative'>
+      className='w-[480px] h-[120px] md:w-[615px] bg-white border-gray2 py-4 border rounded-[3px] mr-7 flex items-center overflow-hidden relative'>
       {currentFeeds}
       {pointer < mock.length && (
         <div className='bg-white rounded-full absolute h-6 w-6 right-2 flex justify-center'>
@@ -72,6 +76,7 @@ const Feed = () => {
           />
         </div>
       )}
+      {showFeedModal && <FeedModal />}
     </div>
   );
 };
